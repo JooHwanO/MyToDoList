@@ -3,3 +3,14 @@
 {
     display: none;
 }
+
+
+img{
+    position : absolute; /*절대 위치*/
+    top: 15%;
+    left: 50%;
+    width:50%;
+    height:70%;
+    z-index: -1; 
+    animation: fadeIn 0.5s linear;
+ }

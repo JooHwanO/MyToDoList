@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum app</title>
+    <title>ToDolist</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <form id="todo-form">
-        <input type="text"  placeholder="Write a To Do and Press Enter">
-    </form>
+
+    <img src="" alt="" id ="main-img">
+
     
-    <ul id ="todo-list"></ul>
-    <form class="hidden"  id ="login-form"><!-- 숨기고시ㅣ작-->
-        <input type="text" 
-                maxlength="15" 
-                required 
-                type ="text"
-                placeholder="What is your name?">
-        <button>Login</button>
-    </form>
-    <h1 id= "greeting" class="hidden">Hello</h1><!-- 숨기고시ㅣ작-->
+    <div>
+        <h2 id="clock">  00:00 </h2>
+    </div>
 
-    <h1>Hellozzzz</h1>
 
-    <h2 id="clock"> 00:00 </h2>
+    <div>
+        <form id="todo-form">
+            <input type="text" placeholder="Write a To Do and Press Enter">
+        </form>
+        <ul id="todo-list"></ul>
+    </div>
 
-    <div id = quotes>
+
+
+    <h1 class="hidden" id="greeting">Hello</h1>
+
+    <!--명언-->
+    <div id=quotes>
         <span></span>
         <span></span>
     </div>
-    <div id =weather>
+    <div id=weather>
         <span></span>
         <span></span>
     </div>
+
+
 
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
@@ -43,4 +49,5 @@
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
 </body>
+
 </html>
