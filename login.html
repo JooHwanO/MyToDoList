@@ -11,18 +11,22 @@
 
 <body>
     <header>
-        <h1>안ㄴ영하세요</h1>
+        <h1>당신의 일상을 기록하다</h1>
     </header>
     <main>
-        <form class="hidden" id="login-form">
-            <input type="text" maxlength="15" required type="text" placeholder="What is your name?">
-            <button onclick="location.href='index.html'">Login</button>
-        </form>
+        <div id="container">
+            <label for="login-form"><span>* </span>이름</label>
+            <form class="hidden" id="login-form">
+                <input type="text" maxlength="15" type="text" placeholder="What is your name?" required>
+                <button class="btn-12"><span>Login!</span><span>Click</span></button>
+            </form>
+        </div>
     </main>
+
     <footer>
         <h1>bye</h1>
     </footer>
-    <script src="js/greeting.js"></script>
+    <script src="js/greeting_login.js"></script>
     <script src="js/login_background.js"></script>
 </body>
 
