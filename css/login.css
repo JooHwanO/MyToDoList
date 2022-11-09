@@ -1,61 +1,88 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:500');
+
 * {
     margin: 0;
 	padding: 0;
     box-sizing : border-box;
 }
+
 .hidden
 {
     display: none;
 }
+
 html,body{
-    height :100%;
-    width:100%;
+    width :1920px; 
+    height: 1080px;
 }
 
 /*---------------------------- 헤더 ----------------------------*/
 header{
     background-color: gray;
-    height: 10%;
-}
-
-header h1{
-    font-family:'Noto Serif Korean' , sans-serif;;
-    font-size:45px;
-    position:relative;
-    top:30%;
-    -webkit-animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    height:100px;
+    width: 1920px;
 
 }
-/*----------------------------  ----------------------------*/
+.header_bg
+{
+    width:1920px;
+    height: 100px;
+    background-image: url('../loginimg/error-glitch.gif');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}
 
 
 
+/*--------------------------------------------------------*/
 main{
-    height: 80%;
+    width:1920px;
+    height: 864px;
     z-index: -1;
 }
+
 .container{
     display: flex;
+    overflow: hidden;
+    width:1920px;
+    
+    height: 864px;
 }
-main img{ 
+
+#logo_image{
+    width: 700px;
+}
+
+#logo_image img{ 
     position : absolute; /* 상위로 부터 기준을 찾음 
                            -> 조상은 body임 100%로 기준*/
     top: 20%;   /* 100% 중에 20%*/ 
     left: 50%;/* 100% 중에 50%만큼 왼쪽에서 떨어짐*/
-    width :50%;/* 100% 중에 50%크기*/
+    width :960px;/* 100% 중에 50%크기*/
     height: 60%; /* 100% 중에 60% -> top에서 20%떨어지므로 밑에도 20%남음 60+40=100이므로 가운데*/
+    overflow: hidden;
 }
 
+#container h1{
+    position : absolute;
+    left:30px;
+    font-family:'Noto Serif Korean' , sans-serif;
+    font-size:60px;
+    top:30%;
+    -webkit-animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
 
 /*------------------------------input 꾸미기---------------------------*/
 main form{
     position: absolute;
     top:55%;
     left:30px;
+    width:auto; /*크기가 고정되어야 화면을 줄일때 밀리지않음.*/
 }
 input[type=text] /*type이 text인 것을 선택*/
 {
@@ -67,7 +94,8 @@ input[type=text] /*type이 text인 것을 선택*/
 
     text-align: center; /*글자 가운데*/
     margin-left: 10px;
-
+    font-family:'Noto Serif Korean' , sans-serif;
+    font-size: 20px;
     -webkit-appearance: none; /*구글용*/
     -webkit-border-radius: 15px; /*구글용*/
     line-height: 1.45;
@@ -99,19 +127,55 @@ label{ /*아이디*/
     z-index: 1;
     
   }
-/* ----------------------------------------------------------------- */
-label span{
+  label span{
     color: #da4841; /*별 색상 */
     vertical-align: -1px; /*별 위치 미세 조정*/
   }
 
-
-
-
-
+/* ----------------------------------------------------------------- */
+/*-------------------------------버튼------------------------------- */
+#login_button{
+    position: relative;
+    left: 5px;
+    vertical-align: 4px;
+    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+    font-family:'Rubik',sans-serif; 
+    font-size:15px;
+    width: 120px;
+    height: 50px;
+    line-height: 1.25;
+    background: lightgray;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    outline:none; 
+    border: none; 
+    transition: background-color .6s ease;
+    overflow: hidden;
+}
+#login_button::after{
+    content: ""; /* */
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+#login_button:focus,#login_button:hover {
+    background: gray;
+}
+#login_button:active::after {
+    width: 300px;
+    height: 300px;
+  }
+/*-------------------------------------------------------------- */
   footer{
     background-color: gray;
-    height:10%;
+    height:100px;
 
 }
 

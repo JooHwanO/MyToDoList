@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:500');
+
+* {
+    margin: 0;
+	padding: 0;
+}
+.hidden
+{
+    display: none;
+}
+html,body{
+    width :100vh; 
+    height: 100vh;
+}
+
+
+
+
+header{
+    background-color: gray;
+    height:100px;
+    width: 1920px;
+
+}
+.header_bg
+{
+    width:1920px;
+    height: 100px;
+    background-image: url('../loginimg/error-glitch.gif');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+
+/*-----------------------메인---------------------------*/
+main{
+    width:1920px;
+    height:737px;
+}
+
+#container{
+    display: inline-flex;
+    justify-content: flex-start;
+    width:1920px;
+    height: 864px;
+}
+
+main form{
+    top:55%;
+    left:30px;
+    width:auto; /*크기가 고정되어야 화면을 줄일때 밀리지않음.*/
+}
+
+#container h1{
+    position : absolute;
+    left:30px;
+    font-family:'Noto Serif Korean' , sans-serif;
+    font-size:60px;
+    top:30%;
+    -webkit-animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/* --------------------------------------------------- */
+
+
+
+footer{
+    background-color: gray;
+    width: 1920px;
+    height:100px;
+
+}
+
+/*애니메이션 효과*/
+@-webkit-keyframes h1 {
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+  }
+  @keyframes h1 {
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+  }
+  

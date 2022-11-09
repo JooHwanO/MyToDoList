@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/test.css">
     <title>Login</title>
 </head>
 
 <body>
     <header>
-        <h1>당신의 일상을 기록하다</h1>
+        <div class="header_bg"></div>
     </header>
     <main>
         <div id="container">
-            <label for="login-form"><span>* </span>이름</label>
-            <form class="hidden" id="login-form">
+            <div><h1>당신의 <br>일상을 기록하다 📆</h1></div>
+            <div><label for="login-form"><span>* </span>이름</label></div>
+            <div></div><form class="hidden" id="login-form">
                 <input type="text" maxlength="15" type="text" placeholder="What is your name?" required>
-                <button class="btn-12"><span>Login!</span><span>Click</span></button>
-            </form>
+                <button id="login_button">LOGIN</button>
+            </form></div>
         </div>
+        <div id="logo_image"> </div>
     </main>
 
     <footer>
-        <h1>bye</h1>
+        <div class="header_bg"></div>
     </footer>
     <script src="js/greeting_login.js"></script>
     <script src="js/login_background.js"></script>
