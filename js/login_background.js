@@ -4,7 +4,7 @@
 const login_image=["귀를기울이면.gif","LOVE.gif","LP.gif","man.gif","SIGA2.gif","so.gif"];
 
 const chosenImage = login_image[Math.floor(Math.random() * login_image.length)];
-const mainselect=document.querySelectorAll('div').item(2);
+const mainselect=document.getElementById("logo_image")
 console.log(mainselect);
 const loginimg = document.createElement("img");
 loginimg.src=`loginimg/${chosenImage}`;

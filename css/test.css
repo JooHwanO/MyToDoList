@@ -36,8 +36,6 @@ header{
 }
 
 
-
-
 /*-----------------------메인---------------------------*/
 main{
     width:1920px;
@@ -46,27 +44,125 @@ main{
 
 #container{
     display: inline-flex;
-    justify-content: flex-start;
+    justify-content: center;
     width:1920px;
-    height: 864px;
+    height: 737px;
+}
+#left{
+    position:relative;
+    width: 960px;
 }
 
 main form{
     top:55%;
     left:30px;
-    width:auto; /*크기가 고정되어야 화면을 줄일때 밀리지않음.*/
+    width:650px;
+    position:relative;
 }
 
 #container h1{
-    position : absolute;
-    left:30px;
+    position: absolute;
+    display: inline-block;
+    top:180px;
+    left:50px;
     font-family:'Noto Serif Korean' , sans-serif;
     font-size:60px;
-    top:30%;
     -webkit-animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
+#logo_image{
+    width: 960px;
+    margin:auto; /*그림 가운데 정렬*/
+}
+
+#logo_image img{ 
+    width : inherit;/* logo+image 상속 960px*/
+    height: 590px; 
+}
 /* --------------------------------------------------- */
+input[type=text] /*type이 text인 것을 선택*/
+{
+    position : relative;
+    left:30px;
+    border:none;
+    border-radius: 20px; /* input 둥글게 */
+    width: 500px;          /*크기 */
+    height: 50px; 
+
+    text-align: center; /*글자 가운데*/
+    margin-left: 10px;
+    font-family:'Noto Serif Korean' , sans-serif;
+    font-size: 20px;
+    -webkit-appearance: none; /*구글용*/
+    -webkit-border-radius: 15px; /*구글용*/
+    line-height: 1.45;
+    letter-spacing: -0.04rem;
+
+    border: 2px solid #dddddd !important;    /* 외곽선 */
+}
+label{ /*아이디*/
+    position: absolute;
+    top: 53%;
+    left: 80px;
+    padding: 10px;
+    background: white;
+    font-size: 14px;
+    color: #888;
+    font-weight: bold;
+    z-index: 1;
+    
+  }
+  label span{
+    color: #da4841; /*별 색상 */
+    vertical-align: -1px; /*별 위치 미세 조정*/
+  }
+
+
+/*-------------------------------버튼------------------------------- */
+#login_button{
+    position:absolute;
+    left:555px;
+    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+    font-family:'Rubik',sans-serif; 
+    font-size:15px;
+    width: 120px;
+    height: 50px;
+    line-height: 1.25;
+    background: lightgray;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    outline:none; 
+    border: none; 
+    
+    transition: background-color .6s ease;
+    overflow: hidden;
+}
+#login_button::after{
+    content: ""; /* */
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+#login_button:focus,#login_button:hover {
+    background: gray;
+}
+#login_button:active::after {
+    width: 300px;
+    height: 300px;
+  }
+/*-------------------------------------------------------------- */
+
+
+
+
 
 
 

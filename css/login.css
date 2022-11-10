@@ -49,7 +49,6 @@ main{
     display: flex;
     overflow: hidden;
     width:1920px;
-    
     height: 864px;
 }
 
@@ -102,8 +101,6 @@ input[type=text] /*type이 text인 것을 선택*/
     letter-spacing: -0.04rem;
 
     border: 2px solid #dddddd !important;    /* 외곽선 */
-
-
 }
 input:focus{ 
     outline:none; /*아웃 라인*/
