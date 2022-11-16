@@ -7,41 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDolist</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+    <header>
+        <div class="header_bg"></div>
+    </header>
+    <main>
+        <div id="main-img"></div> <!-- 배경화면 -->
+        <div id="content">
+            <div id="opacity-bg">
+                <div id="left-content">
+                    <div id="left-first-content">
+                        <div id="clock-greeting-div">
+                            <h2 id="clock"> 00:00 </h2>
+                            <h1 id="greeting">Hello</h1>
+                        </div>
 
-    <img src="" alt="" id ="main-img">
-    <h1 id="greeting">Hello</h1>
+                        <!--명언-->
+                        <div id=quotes>
+                            <span></span>
+                            <span></span>
+                        </div>
 
-    
-    <div>
-        <h2 id="clock">  00:00 </h2>
-    </div>
+                        <div id=weather>
+                            <span></span>
+                            <span></span>
+                        </div>
 
-    <button id =logout>Logout </button>
+                        <button id=logout>Logout </button>
+                    </div>
+                </div>
+                <div id="right-content">
+                    <div>
+                        <form id="todo-form">
+                            <input type="text" placeholder="Write a To Do and Press Enter">
+                        </form>
+                        <ul id="todo-list"></ul>
+                    </div>
 
-    <div>
-        <form id="todo-form">
-            <input type="text" placeholder="Write a To Do and Press Enter">
-        </form>
-        <ul id="todo-list"></ul>
-    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
 
 
-
-
-    
-    <!--명언-->
-    <div id=quotes>
-        <span></span>
-        <span></span>
-    </div>
-    <div id=weather>
-        <span></span>
-        <span></span>
-    </div>
-
+    <footer>
+        <div class="header_bg"></div>
+    </footer>
 
     <script src="js/greeting_main.js"></script>
     <script src="js/clock.js"></script>

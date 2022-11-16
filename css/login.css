@@ -3,91 +3,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:500');
 
-* {
-    margin: 0;
-	padding: 0;
-    box-sizing : border-box;
-}
+/*-----------------------메인--------------------------*/
 
-.hidden
-{
-    display: none;
-}
 
-html,body{
-    width :1920px; 
-    height: 1080px;
-}
-
-/*---------------------------- 헤더 ----------------------------*/
-header{
-    background-color: gray;
-    height:100px;
-    width: 1920px;
-
-}
-.header_bg
-{
+#container{
+    justify-content: center;
     width:1920px;
-    height: 100px;
-    background-image: url('../loginimg/error-glitch.gif');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: contain;
+    display: inline-flex;
+    height: 737px;
+}
+#left{
+    position:relative;
+    width: 960px;
 }
 
-
-
-/*--------------------------------------------------------*/
-main{
-    width:1920px;
-    height: 864px;
-    z-index: -1;
-}
-
-.container{
-    display: flex;
-    overflow: hidden;
-    width:1920px;
-    height: 864px;
-}
-
-#logo_image{
-    width: 700px;
-}
-
-#logo_image img{ 
-    position : absolute; /* 상위로 부터 기준을 찾음 
-                           -> 조상은 body임 100%로 기준*/
-    top: 20%;   /* 100% 중에 20%*/ 
-    left: 50%;/* 100% 중에 50%만큼 왼쪽에서 떨어짐*/
-    width :960px;/* 100% 중에 50%크기*/
-    height: 60%; /* 100% 중에 60% -> top에서 20%떨어지므로 밑에도 20%남음 60+40=100이므로 가운데*/
-    overflow: hidden;
+main form{
+    top:55%;
+    width:620px;
+    position:absolute;
 }
 
 #container h1{
-    position : absolute;
-    left:30px;
+    position: absolute;
+    display: inline-block;
+    top:180px;
+    left:50px;
     font-family:'Noto Serif Korean' , sans-serif;
     font-size:60px;
-    top:30%;
     -webkit-animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     animation: h1 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-/*------------------------------input 꾸미기---------------------------*/
-main form{
-    position: absolute;
-    top:55%;
-    left:30px;
-    width:auto; /*크기가 고정되어야 화면을 줄일때 밀리지않음.*/
+#logo_image{
+    width: 960px;
+    margin:auto; /*그림 가운데 정렬*/
 }
+
+#logo_image img{ 
+    width : inherit;/* logo+image 상속 960px*/
+    height: 590px; 
+}
+/* --------------------------------------------------- */
+
 input[type=text] /*type이 text인 것을 선택*/
 {
+    position : relative;
+    left:30px;
     border:none;
     border-radius: 20px; /* input 둥글게 */
-
     width: 500px;          /*크기 */
     height: 50px; 
 
@@ -99,42 +62,30 @@ input[type=text] /*type이 text인 것을 선택*/
     -webkit-border-radius: 15px; /*구글용*/
     line-height: 1.45;
     letter-spacing: -0.04rem;
-
     border: 2px solid #dddddd !important;    /* 외곽선 */
 }
-input:focus{ 
-    outline:none; /*아웃 라인*/
-    color:black; /*깜빡 깜빡 색상*/
-}
-input::placeholder{
-    color:rgb(107, 107, 107);
-    font-size: 15px;
-    letter-spacing: -0.04rem;
-}
-
 label{ /*아이디*/
     position: absolute;
     top: 53%;
-    left: 50px;
+    left: 80px;
     padding: 10px;
     background: white;
     font-size: 14px;
     color: #888;
     font-weight: bold;
     z-index: 1;
-    
+
   }
   label span{
     color: #da4841; /*별 색상 */
     vertical-align: -1px; /*별 위치 미세 조정*/
   }
-
-/* ----------------------------------------------------------------- */
 /*-------------------------------버튼------------------------------- */
+
+
 #login_button{
-    position: relative;
-    left: 5px;
-    vertical-align: 4px;
+    position:absolute;
+    left:555px;
     box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
     font-family:'Rubik',sans-serif; 
     font-size:15px;
@@ -146,6 +97,7 @@ label{ /*아이디*/
     letter-spacing: 0.08em;
     outline:none; 
     border: none; 
+    
     transition: background-color .6s ease;
     overflow: hidden;
 }
@@ -170,11 +122,9 @@ label{ /*아이디*/
     height: 300px;
   }
 /*-------------------------------------------------------------- */
-  footer{
-    background-color: gray;
-    height:100px;
 
-}
+
+
 
 /*애니메이션 효과*/
 @-webkit-keyframes h1 {

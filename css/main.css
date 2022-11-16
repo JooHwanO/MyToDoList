@@ -1,0 +1,58 @@
+#main-img 
+{
+    position: absolute;
+    z-index: -1;
+}
+
+#main-img img{
+    width: 1920px;
+    height: 737px;
+}
+
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:1920px;
+    height: 737px; /*가로와 세로가 정의되어있어야 justify와 aligin이 적용됨.*/
+}
+
+#opacity-bg
+{
+    background-color: rgba(255,255,255,0.4);
+    width:95%;
+    height:90%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#left-content{
+    background-color: yellow;
+    width:35%;
+    height:90%;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
+    margin-right:2%; /*띄우기*/
+}
+
+#left-first-content
+{
+
+    width:90%;
+    height: 90%;
+    margin:auto;
+}
+
+#right-content
+{
+    width:60%;
+    height: 90%;
+    background-color: aqua;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
+}
+
+
