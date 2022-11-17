@@ -17,6 +17,10 @@ header{
     width: 1920px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:500');
+
 .header_bg
 {
     width:1920px;

@@ -18,7 +18,7 @@ logout_but.addEventListener("click",onLogoutClick)
 
 function paintGreetings(username) {
     greeting.classList.remove(HIDDEN_CLASSNAME); 
-    greeting.innerHTML = `Hello  ${username}`     
+    greeting.innerHTML = `${username} 님`     
 }
 
 paintGreetings(localStorage.getItem(USERNAME_KEY));

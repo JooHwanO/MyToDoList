@@ -1,3 +1,10 @@
+
+hr
+{
+    margin-top: 5px;
+    border:none;
+    border-top: 3px dotted black;
+}
 #main-img 
 {
     position: absolute;
@@ -30,20 +37,22 @@
 
 
 #left-content{
-    background-color: yellow;
+    background-color: white;
     width:35%;
     height:90%;
     border-radius: 15px;
     box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
     margin-right:2%; /*띄우기....*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #left-first-content
 {
-
     width:90%;
     height: 90%;
-    margin:auto;
+    
 }
 
 #right-content
@@ -56,3 +65,57 @@
 }
 
 
+#clock-greeting-div> #clock
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:80px;
+    text-align: center;
+}
+#clock-greeting-div> #greeting
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    margin-top:30px;
+    -webkit-animation: greeting 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: greeting 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    display: inline; /*한줄에 넣기위해*/
+
+}
+#clock-greeting-div > span{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#weater-quotes-div>#weather>span:first-child{
+    font-size:80px;
+}
+
+
+
+
+/*애니메이션 효과*/
+@-webkit-keyframes greeting {
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+  }
+  @keyframes greeting {
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+  }
+  

@@ -8,8 +8,18 @@ function onGeoOk(position)
     fetch(url).then(response => response.json()).then(data =>{
         const weather= document.querySelector("#weather span:first-child");
         const city= document.querySelector("#weather span:last-child");
+        const weather_state=data.weather[0].main;
+        if (weather_state==="Clear")
+        {
+            weather.innerText = "🌞";
+        }
+        else if(weather_state==="Clouds"){
+            weather.innerText = "☁" ;
+        }
+        /*추가할것 https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2*/ 
+        
         const name= data.name;
-        weather.innerText = data.weather[0].main;
+        
         city.innerText=name;
     })
 
