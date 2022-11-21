@@ -21,15 +21,7 @@ header{
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:500');
 
-.header_bg
-{
-    width:1920px;
-    height: 100px;
-    background-image: url('../loginimg/film-filmstrip.gif');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: contain;
-}
+
 
 main{
     width:1920px;
@@ -52,4 +44,12 @@ footer{
     background-size: contain;
 }
 
-
+#header_bg
+{
+    width:1920px;
+    height: 100px;
+    background-image: url('../loginimg/video-g315e0b416_1920.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}

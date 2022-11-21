@@ -55,14 +55,6 @@ hr
     
 }
 
-#right-content
-{
-    width:60%;
-    height:90%;
-    background-color: aqua;
-    border-radius: 15px;
-    box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
-}
 
 #clock-greeting-div
 {
@@ -190,6 +182,7 @@ hr
   #quotes_div span{
     display: block;
   }
+
 /*애니메이션 효과*/
 @-webkit-keyframes greeting {
     0% {
@@ -215,4 +208,51 @@ hr
         opacity: 1;
       }
   }
-  
+  /*-----------------------------왼쪽끝---------------------------------------------*/
+/*-----------------------------오른쪽시작---------------------------------------------*/
+
+#right-content
+{
+    width:60%;
+    height:90%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#line
+{
+    width:2.5%;
+    height: 90%;
+    border-right:dotted black;
+}
+#r-left-div
+{
+    width:55%;
+    height: 90%;
+}
+#r-right-div
+{
+    margin-left:2.5%;
+
+    width:32.5%;
+    height: 90%;
+}
+
+
+.month{
+    color: #fff;
+    font-size: 22px;
+    text-align:center;
+    margin-left: -25px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.month .fas{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}

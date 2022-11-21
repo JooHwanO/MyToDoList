@@ -36,7 +36,7 @@ function onGeoOk(position)
         /*추가할것 https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2*/ 
         
         location_ment.innerHTML="위치 :  "
-        temp.innerHTML="온도 : " + data.main.temp;
+        temp.innerHTML="온도 : " + data.main.temp + "˚C";
         const name= data.name;
         
         city.innerText=name;

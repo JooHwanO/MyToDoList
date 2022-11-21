@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div class="header_bg"></div>
+        <div id="header_bg"></div>
     </header>
     <main>
         <div id="main-img"></div> <!-- 배경화면 -->
@@ -38,7 +38,7 @@
                                 <span></span>
                             </div>
                         </div>
-                        <div id ="quotes_div"> 
+                        <div id="quotes_div">
                             <div id="quotes">
                                 <!--명언-->
                                 <span></span>
@@ -48,29 +48,38 @@
 
                         <div id="logout-but-div">
                             <hr>
-                            <button id=logout>LOGOUT </button>
+                            <button id="logout">LOGOUT </button>
                         </div>
                     </div>
                 </div>
                 <div id="right-content">
-                    <div>
+                    <div id="r-left-div">
+                        <!--달력들어갈자리-->
+                        <section class="main">
+                            <h1 class="main-title">Calender AND ToDoList</h1>
+                            <div class="month clearfix">
+                                <span class="left">
+                                    <i class="fas fa-chevron-left left"></i>
+                                </span>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div id="line">
+                    </div>
+                    <div id="r-right-div">
                         <form id="todo-form">
                             <input type="text" placeholder="Write a To Do and Press Enter">
                         </form>
                         <ul id="todo-list"></ul>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </main>
-
-
     <footer>
-        <div class="header_bg"></div>
+        <div id="header_bg"></div>
     </footer>
-
     <script src="js/greeting_main.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
