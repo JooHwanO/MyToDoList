@@ -48,4 +48,4 @@ const arthur = document.querySelector("#quotes span:last-child");
 const dayquotes = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = dayquotes.quote;
-arthur.innerText= dayquotes.author;
+arthur.innerText= "ㅡ "+dayquotes.author+" ㅡ";

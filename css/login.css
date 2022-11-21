@@ -1,7 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rubik:500');
 
 /*-----------------------메인--------------------------*/
 
@@ -102,7 +99,7 @@ label{ /*아이디*/
     overflow: hidden;
 }
 #login_button::after{
-    content: ""; /* */
+    content: ""; /* 빈칸이 있어야함.*/
     position: absolute;
     width: 0;
     height: 0;

@@ -51,27 +51,30 @@ hr
 #left-first-content
 {
     width:90%;
-    height: 90%;
+    height: 95%;
     
 }
 
 #right-content
 {
     width:60%;
-    height: 90%;
+    height:90%;
     background-color: aqua;
     border-radius: 15px;
     box-shadow: 3px 3px 3px 3px rgb(65, 63, 63);
 }
 
-
+#clock-greeting-div
+{
+    margin-bottom: 20px;
+}
 #clock-greeting-div> #clock
 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size:80px;
     text-align: center;
 }
-#clock-greeting-div> #greeting
+#greeting_div>#greeting
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
@@ -81,18 +84,112 @@ hr
     display: inline; /*한줄에 넣기위해*/
 
 }
-#clock-greeting-div > span{
+#greeting_div> span{
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#weater-quotes-div>#weather>span:first-child{
-    font-size:80px;
+
+
+/*-------------날씨 아이콘------------------*/
+#weater-quotes-div
+{
+    width: 574px;
+    height: 230px;
+    text-align: center;
+    padding-top:15px;
 }
 
 
+#weater-quotes-div>img{
+    width:170px;
+    height: 170px;
+}
+#weather > span
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    width:inherit;
+}
+
+#weather > span:nth-child(3)
+{
+    padding-left: 10px;
+}
 
 
+/*------------로그아웃 버튼-----------*/
+#logout-but-div
+{
+    margin-top:20px;
+    position: relative;
+    height: 100px;
+
+
+}
+#logout
+{
+    position:absolute;
+    font-weight: 1000;
+    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+    font-family:'Rubik',sans-serif; 
+    font-size:15px;
+    width: 120px;
+    height: 50px;
+    line-height: 1.25;
+    background: lightgray;
+    text-decoration: none;
+    letter-spacing: 0.08em; /*글자사이 간격*/
+    outline:none; 
+    border: none; 
+    transition: background-color .6s ease;
+    overflow: hidden;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+#logout::after{
+    content: ""; /* 빈칸이 있어야함.*/
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    transition: width 0.3s ease, height 0.3s ease;
+    
+}
+#logout:focus,#logout:hover {
+    background: gray;
+}
+#logout:active::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  /*-----------명언-------------*/
+  #quotes_div
+  {
+    display:flex;
+    height: 70px;
+    width:574px;
+    background-color: black;
+    border-radius: 15px;
+    font-style: italic;
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #quotes_div span{
+    display: block;
+  }
 /*애니메이션 효과*/
 @-webkit-keyframes greeting {
     0% {
