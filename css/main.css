@@ -242,17 +242,59 @@ hr
     height: 90%;
 }
 
+/*달력*/
+#r-left-div
+{
+    background-color: beige;
+}
 
-.month{
+.clearfix::after{
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+
+li{ 
+    list-style: none; /* 리스트에 앞에나오는 (*)를 없앰 */
+}
+
+.main
+{
+    background: rgb(238,126,195);
+    background: linear-gradient(74deg, rgba(238,126,195,1) 9%, rgba(149,175,213,0.981127485173757) 100%);
+    width:600px;
+    /* margin: 50px auto 50px; 상 좌우 하 순서 */
+    padding: 15px 25px 20px 15px;
+    border-radius: 10px;
+}
+
+
+.main .main-title{
+    padding: 20px;
     color: #fff;
-    font-size: 22px;
-    text-align:center;
-    margin-left: -25px;
-    margin-bottom: 20px;
-    padding: 10px;
+    text-align: center;
 }
 
-.month .fas{
-    cursor: pointer;
-    transition: all .2s ease-in-out;
+.main .day{
+    width: 100%;
+    /* overflow: hidden; */
 }
+
+/* mon~sun 까지 왼쪽으로 정렬 */
+.dayCount .dayCount-list li{
+    float: left;
+    width: 80px;
+    color: #fff;
+}
+
+.main .day li{ /* 일자 네모박스 */
+    float: left;
+    background: white;
+    padding: 10px;
+    width: 65px;
+    height: 65px;
+    margin-right: 15px; /*width65 + m-right 15 = 80 위의 mon~sun도 80임*/
+    margin-top: 10px;
+}
+
