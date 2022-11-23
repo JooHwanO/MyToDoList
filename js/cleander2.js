@@ -10,6 +10,7 @@ const todoTitle = document.querySelector('.todo-title');
 const todoList = document.querySelector('.todoList');
 
 const input = document.querySelector('input[type="text"]');
+
 const add = document.querySelector('.add');
 const reset = document.querySelector('.reset');
 const allReset = document.querySelector('.allreset');
@@ -100,7 +101,7 @@ function makeCalendar(year,mon,dayCount){
             });
 
             Day.appendChild(onlyOneList);
-            continue;
+            continue; //for문을 벗어남
         }
 
 
@@ -117,6 +118,7 @@ function makeCalendar(year,mon,dayCount){
 
         if(0===getDay(year,mon,i)){
             list.style.color = 'red';
+            
         }
         else if(6==getDay(year,mon,i)){
             list.style.color = 'blue';
@@ -155,58 +157,15 @@ function preMonthOrYear(){
 }
 
 
+pre.addEventListener('click',preMonthOrYear);
+next.addEventListener('click',nextMonthOrYear);
+
+
 function main(){
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
     todoTitle.textContent = `What are you going to do on ${year}.${mon}.${currentDay} 👀⁉`;
     displayToDoOnDays();
-}
-
-function displayToDoOnDays(){
-    todoList.innerHTML='';
-    const YMD = year+'-'+mon+'-'+DayOfChoice;
-    let arrayToDo;
-    const elementToDo = document.createElement('li');
-    if(!localStorage.getItem(YMD)){
-        return;
-    }
-    if(localStorage.getItem(YMD).includes(',')){
-        
-        arrayToDo = localStorage.getItem(YMD).split(',');
-        arrayToDo.forEach((value)=>{
-            const deleteBtn = document.createElement('button');
-            deleteBtn.setAttribute('class','deleteBtn');
-            deleteBtn.innerHTML = '<i class="far fa-minus-square"></i>';
-            const elementToDo = document.createElement('li');
-            
-            elementToDo.innerText = value;
-            elementToDo.appendChild(deleteBtn);
-
-            elementToDo.scrollTo();
-
-            todoList.appendChild(elementToDo);
-        });
-        
-    }
-    else{
-        const deleteBtn = document.createElement('button');
-        deleteBtn.setAttribute('class','deleteBtn');
-        deleteBtn.innerHTML = '<i class="far fa-minus-square"></i>';
-
-        elementToDo.textContent = localStorage.getItem(YMD);
-        elementToDo.appendChild(deleteBtn);
-        todoList.appendChild(elementToDo);
-    }
-}
-
-pre.addEventListener('click',preMonthOrYear);
-next.addEventListener('click',nextMonthOrYear);
-
-
-function clearEvent(){
-    clickEventArr.forEach((value)=>{
-        value.style.border = 'none';
-    });
 }
 
 Day.addEventListener('click',(event)=>{
@@ -222,16 +181,37 @@ Day.addEventListener('click',(event)=>{
         displayToDoOnDays();
         clickEventArr.push(event.target);
         console.log(clickEventArr);
-        input.focus();
+        input.focus(); //포커스 효과
     }
     
 });
+function clearEvent(){
+    clickEventArr.forEach((value)=>{
+        value.style.border = 'none';
+    });
+}
+/*------------Todo-----------------------------------------------*/ 
+function addToDoList(){
+    if(input.value === ''){
+        alert('please input you are going to do');
+        return;
+    }
+
+    storeToDo = keepStore();
+    storeToDo.push(input.value);
+    
+    const YMD = year+'-'+mon+'-'+DayOfChoice;
+    localStorage.setItem(YMD,storeToDo);
+    
+    displayToDoOnDays();
+    input.value="";
+    input.focus();
+}
 
 function keepStore(){
     const YMD = year+'-'+mon+'-'+DayOfChoice;
     let arrayToDo;
     let arr = new Array();
-    const elementToDo = document.createElement('li');
     if(!localStorage.getItem(YMD)){
         return arr;
     }
@@ -249,25 +229,49 @@ function keepStore(){
 
 
 
-
-
-
-function addToDoList(){
-    if(input.value === ''){
-        alert('please input you are going to do');
+function displayToDoOnDays(){
+    todoList.innerHTML='';
+    const YMD = year+'-'+mon+'-'+DayOfChoice;
+    let arrayToDo;
+    const elementToDo = document.createElement('li');
+    if(!localStorage.getItem(YMD)){
         return;
     }
+    if(localStorage.getItem(YMD).includes(',')){
+        
+        arrayToDo = localStorage.getItem(YMD).split(',');
+        arrayToDo.forEach((value)=>{
+            const deleteBtn = document.createElement('button');
+            deleteBtn.setAttribute('class','deleteBtn');
+            deleteBtn.innerHTML = '<i class="far fa-minus-square"></i>';
 
-    storeToDo = keepStore();
-    storeToDo.push(input.value);
-    
-    const YMD = year+'-'+mon+'-'+DayOfChoice;
-    localStorage.setItem(YMD,storeToDo);
-    
-    displayToDoOnDays();
-    input.value="";
-    input.focus();
+            const elementToDo = document.createElement('li');
+            elementToDo.innerText = value;
+            elementToDo.appendChild(deleteBtn);
+            elementToDo.scrollTo();
+            todoList.appendChild(elementToDo);
+        });
+        
+    }
+    else{
+        const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class','deleteBtn');
+        deleteBtn.innerHTML = '<i class="far fa-minus-square"></i>';
+
+        elementToDo.textContent = localStorage.getItem(YMD);
+        elementToDo.appendChild(deleteBtn);
+        todoList.appendChild(elementToDo);
+    }
 }
+
+
+
+
+
+
+
+
+
 
 add.addEventListener('click',(event)=>{
     addToDoList();
@@ -296,7 +300,11 @@ allReset.addEventListener('click',()=>{
     }
 });
 
-todoList.addEventListener('click',(event)=>{
+
+
+
+
+todoList.addEventListener('click',(event)=>{ //마이너스 눌렀을때 
     if(event.target.className==='far fa-minus-square'){
         console.log("a: "+event.target.parentNode.parentNode.textContent);
              

@@ -1,8 +1,27 @@
+
+import {year,mon,DayOfChoice} from "./cleander.js"
+
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input")
 const toDoList = document.getElementById("todo-list");
 
 let ToDolist = [];
+
+function PaintToDo(newTodo)
+{
+    const li =document.createElement("li");
+    li.id = newTodo.id; //html에 id 추가하기.  
+    const span=document.createElement("span");
+    span.innerText= newTodo.text;
+    const button = document.createElement("button");
+    button.innerText="❌";
+    li.appendChild(span); 
+    li.appendChild(button); 
+    toDoList.appendChild(li);
+    button.addEventListener("click",DeleteToDo);
+}
+
+console.log(year,mon,DayOfChoice,"todos");
 
 function saveToDos()
 {
@@ -18,19 +37,20 @@ function DeleteToDo(event)
     saveToDos(); //삭제후 localStorage 업데이트 
 }   
 
-function PaintToDo(newTodo)
+
+
+const toDo = localStorage.getItem("save");
+console.log(toDo);
+if(toDo)
 {
-    const li =document.createElement("li");
-    li.id = newTodo.id; //html에 id 추가하기.  
-    const span=document.createElement("span");
-    span.innerText= newTodo.text;
-    const button = document.createElement("button");
-    button.innerText="?";
-    li.appendChild(span); 
-    li.appendChild(button); 
-    toDoList.appendChild(li);
-    button.addEventListener("click",DeleteToDo);
+    const j = JSON.parse(toDo);
+    console.log(j);
+    ToDolist= j;
+    ToDolist.forEach(PaintToDo); //돌아가며 그리기
 }
+
+
+
 
 function handleTodoSubmit(event)
 {
@@ -46,11 +66,3 @@ function handleTodoSubmit(event)
 }
 
 toDoForm.addEventListener("submit",handleTodoSubmit);
-
-const toDo = localStorage.getItem("save");
-if(toDo)
-{
-    const j = JSON.parse(toDo);
-    ToDolist= j;
-    ToDolist.forEach(PaintToDo);
-}

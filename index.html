@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDolist</title>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/780149fb7c.js" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -59,10 +59,11 @@
                             <h1 class="main-title">Calender AND ToDoList</h1>
                             <div class="month clearfix">
                                 <span class="left">
-                                    <i class="fas fa-chevron-left left"></i>
+                                    <i class="fas fa-solid fa-arrow-left"></i>
+
                                 </span>
                                 <span class="right">
-                                    <i class="fas fa-chevron-right right"></i>
+                                    <i class="fas fa-solid fa-arrow-right"></i>                                
                                 </span>
                                 <p class="month-name"></p>
                             </div>
@@ -86,10 +87,22 @@
                     <div id="line">
                     </div>
                     <div id="r-right-div">
-                        <form id="todo-form">
-                            <input type="text" placeholder="Write a To Do and Press Enter">
-                        </form>
+                        <div class="todo_title">
+                            <h1 class="today">Today.. </h1>
+                            <hr>
+                        </div>
+                        <div class="textToDo">
+                            <form id="todo-form">
+                                <input type="text" placeholder="Write a To Do and Press Enter">
+                            </form>
+                            <button class="textToDo-button add">Add</button>
+                            <button class="textToDo-button reset">Reset</button>
+                            <button class="textToDo-button allreset">All reset</button>
+                        </div>
+   
                         <ul id="todo-list"></ul>
+
+                    
                     </div>
                 </div>
             </div>
@@ -104,7 +117,7 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
-    <script src="js/cleander.js"></script>
+    <script type="module" src="js/cleander.js"></script>
 </body>
 
 </html>

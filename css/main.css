@@ -242,14 +242,14 @@ hr
     height: 90%;
 }
 
-/*달력*/
+/*----------------------------------달력----------------------------------------*/
 #r-left-div
 {
     background-color: beige;
 }
-
+/*가상요소이므로 content에 ''를 넣음 -> float속성을 벗어나기위해 clear를 해줌*/
 .clearfix::after{
-    content: ' ';
+    content: '';
     display: block;
     clear: both;
 }
@@ -265,16 +265,12 @@ li{
     background: linear-gradient(74deg, rgba(238,126,195,1) 9%, rgba(149,175,213,0.981127485173757) 100%);
     width:600px;
     /* margin: 50px auto 50px; 상 좌우 하 순서 */
-    padding: 15px 25px 20px 15px;
+    padding: 15px 15px 15px 15px;
     border-radius: 10px;
+    height: 540px;
 }
 
 
-.main .main-title{
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-}
 
 .main .day{
     width: 100%;
@@ -282,19 +278,63 @@ li{
 }
 
 /* mon~sun 까지 왼쪽으로 정렬 */
+.dayCount{
+    width:545px; /*끝에 15는 지움 js에서 */
+    margin:auto;
+}
 .dayCount .dayCount-list li{
     float: left;
     width: 80px;
     color: #fff;
 }
+.dayCount .dayCount-list li:last-child /*토요일 끝은 65px로*/
+{
+    width: 65px;
+}
+
+
 
 .main .day li{ /* 일자 네모박스 */
     float: left;
     background: white;
-    padding: 10px;
+    padding: 8px;
     width: 65px;
-    height: 65px;
+    height: 55px;
     margin-right: 15px; /*width65 + m-right 15 = 80 위의 mon~sun도 80임*/
     margin-top: 10px;
 }
+/*최상단 제목 */
+.main .main-title{
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
 
+
+.month{
+    color: #fff;
+    font-size: 20px;
+    text-align:center;
+    margin-bottom: 15px;
+}
+
+.month .fas{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+/*화살표 커지는 효과*/
+.month .fas:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.2);
+}
+
+.month .fa-arrow-left{
+    float: left;
+    margin-left: 15px;
+}
+
+.month .fa-arrow-right{
+    float: right;
+    margin-right: 15px;
+}
