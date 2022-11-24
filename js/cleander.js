@@ -233,15 +233,14 @@ Day.addEventListener('click',(event)=>{
     if(event.target.className!=='disabled') //일자들을 눌렀을 때 
     {
         clearEvent(); // 앞에 선택된것 빨간색 된거 해제 
+        today_title.textContent=`Today... ${year}.${mon}.${event.target.textContent} `;
         event.target.style.border='3px solid red'; //해당 일자를 레드로 변경
         DayOfChoice =event.target.innerHTML;        //
-        console.log(DayOfChoice);
         MonOfChoice=mon;
         yearOfChoice=year;
+        console.log(DayOfChoice);
         console.log(event.target);
-
-        today_title.innerHTML=`Today...  ${year}.${mon}.${DayOfChoice}`;
-
+        
 
         clickEventArr.push(event.target);
         console.log(clickEventArr);
@@ -256,7 +255,7 @@ function clearEvent()
     })
 }
 
- export {year,mon,DayOfChoice};//내보내기
+ export {year,mon,DayOfChoice, Day};//내보내기
 main();
 
 

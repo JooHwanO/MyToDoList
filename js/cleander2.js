@@ -177,7 +177,7 @@ Day.addEventListener('click',(event)=>{
         DayOfChoice = (event.target.textContent)*1;
         MonOfChoice = mon;
         yearOfChoice = year;
-        
+        console.log(DayOfChoice);
         displayToDoOnDays();
         clickEventArr.push(event.target);
         console.log(clickEventArr);
@@ -215,6 +215,7 @@ function keepStore(){
     if(!localStorage.getItem(YMD)){
         return arr;
     }
+    
     if(localStorage.getItem(YMD).includes(',')){
         arrayToDo = localStorage.getItem(YMD).split(',');
         arrayToDo.forEach((value)=>{
@@ -237,7 +238,7 @@ function displayToDoOnDays(){
     if(!localStorage.getItem(YMD)){
         return;
     }
-    if(localStorage.getItem(YMD).includes(',')){
+    if(localStorage.getItem(YMD).includes(',')){ //여러개 있을때 
         
         arrayToDo = localStorage.getItem(YMD).split(',');
         arrayToDo.forEach((value)=>{
@@ -253,7 +254,7 @@ function displayToDoOnDays(){
         });
         
     }
-    else{
+    else{ //1개있을때 
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class','deleteBtn');
         deleteBtn.innerHTML = '<i class="far fa-minus-square"></i>';
@@ -277,11 +278,13 @@ add.addEventListener('click',(event)=>{
     addToDoList();
 });
 
-input.addEventListener('keypress',(event)=>{
+input.addEventListener('keypress',(event)=>{ //엔터했을때 
     if(event.key==='Enter'){
        addToDoList();
     }
 });
+
+
 
 reset.addEventListener('click',()=>{
     const result = prompt(`Do you really want to reset TODO on ${year} ${mon} ${DayOfChoice}? Enter (y/n)`);
