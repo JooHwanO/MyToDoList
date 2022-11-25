@@ -46,7 +46,6 @@ input[type=text] /*type이 text인 것을 선택*/
 {
     position : relative;
     left:30px;
-    border:none;
     border-radius: 20px; /* input 둥글게 */
     width: 500px;          /*크기 */
     height: 50px; 

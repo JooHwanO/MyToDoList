@@ -7,6 +7,8 @@ let currentYear = date.getFullYear(); //년도 받아오기
 let currentMon = date.getMonth()+1;   //0~11까지이므로 1더해야함.
 let currentDay = date.getDate(); //현재 일자 받아오기
 
+const input = document.querySelector('input[type="text"]');
+
  let year = currentYear;
  let mon = currentMon;
 
@@ -16,7 +18,6 @@ let yearOfChoice = currentYear;
 
 
 let clickEventArr = []; //날짜를 선택한 li 객체를 담을 배열 
-let storeToDo = [];
 
 const today_title= document.querySelector('.today');
 
@@ -240,9 +241,8 @@ Day.addEventListener('click',(event)=>{
         yearOfChoice=year;
         console.log(DayOfChoice);
         console.log(event.target);
-        
-
         clickEventArr.push(event.target);
+        input.focus();
         console.log(clickEventArr);
     }
 
@@ -256,6 +256,7 @@ function clearEvent()
 }
 
  export {year,mon,DayOfChoice, Day};//내보내기
+
 main();
 
 

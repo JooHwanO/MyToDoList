@@ -179,6 +179,7 @@ Day.addEventListener('click',(event)=>{
         yearOfChoice = year;
         console.log(DayOfChoice);
         displayToDoOnDays();
+        
         clickEventArr.push(event.target);
         console.log(clickEventArr);
         input.focus(); //포커스 효과
@@ -216,13 +217,13 @@ function keepStore(){
         return arr;
     }
     
-    if(localStorage.getItem(YMD).includes(',')){
+    if(localStorage.getItem(YMD).includes(',')){ //여러개라면 
         arrayToDo = localStorage.getItem(YMD).split(',');
         arrayToDo.forEach((value)=>{
             arr.push(value);
         });
     }
-    else{
+    else{ //하나라면 
         arr.push(localStorage.getItem(YMD));
     }
     return arr;
@@ -231,7 +232,8 @@ function keepStore(){
 
 
 function displayToDoOnDays(){
-    todoList.innerHTML='';
+    todoList.innerHTML=''; //초기화
+    
     const YMD = year+'-'+mon+'-'+DayOfChoice;
     let arrayToDo;
     const elementToDo = document.createElement('li');
