@@ -286,12 +286,12 @@ li{
     width: 80px;
     color: #fff;
 }
-.dayCount .dayCount-list li:last-child /*토요일 끝은 65px로*/
+
+.dayCount .dayCount-list li:last-child /*토요일(SAT) 끝은 65px로*/
 {
     width: 65px;
+    
 }
-
-
 
 .main .day li{ /* 일자 네모박스 */
     float: left;

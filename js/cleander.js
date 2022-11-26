@@ -118,6 +118,7 @@ function makeCalendar(year,mon,dayCount)
             else if(6==getDay(year,mon,i)) // 토요일 일때
             {
                 onlyOneList.style.color='blue'
+                onlyOneList.style.marginRight ='0px';
             }
 
 
