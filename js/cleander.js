@@ -237,14 +237,14 @@ Day.addEventListener('click',(event)=>{
         clearEvent(); // 앞에 선택된것 빨간색 된거 해제 
         today_title.textContent=`Today... ${year}.${mon}.${event.target.textContent} `;
         event.target.style.border='3px solid red'; //해당 일자를 레드로 변경
-        DayOfChoice =event.target.innerHTML;        //
+        DayOfChoice =event.target.innerHTML;        // i
         MonOfChoice=mon;
         yearOfChoice=year;
-        console.log(DayOfChoice);
-        console.log(event.target);
+    //    console.log(DayOfChoice);
+     //   console.log(event.target);
         clickEventArr.push(event.target);
-        input.focus();
-        console.log(clickEventArr);
+        input.focus(); //커서깜빡이게 변경
+     //   console.log(clickEventArr);
     }
 
 });
