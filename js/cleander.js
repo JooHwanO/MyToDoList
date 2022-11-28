@@ -6,6 +6,7 @@ const date = new Date() //현재날짜 받아오기
 let currentYear = date.getFullYear(); //년도 받아오기
 let currentMon = date.getMonth()+1;   //0~11까지이므로 1더해야함.
 let currentDay = date.getDate(); //현재 일자 받아오기
+console.log(date.getDate());
 
 const input = document.querySelector('input[type="text"]');
 
@@ -61,6 +62,7 @@ function getDay(year,mon,date) //년월일을 매개변수로 받아
 
 function makeCalendar(year,mon,dayCount)
 {
+    
     clickEventArr=[];
     Day.innerHTML=''; 
     let getFirstDay = getDay(year,mon,1); //이번달의 1일의 요일을 알아냄 (중요)
@@ -125,11 +127,11 @@ function makeCalendar(year,mon,dayCount)
             // 현재날짜가 아닌 다른날짜 클릭 시 현재날짜 블랙테두리
             Day.addEventListener('click',(event)=>{
                 if(event.target!==onlyOneList){
-                    onlyOneList.style.border = '3px solid black';
+                    onlyOneList.style.border = '3px solid orange';
                 }
             });
 
-            DayOfheight(onlyOneList,dayCount,getFirstDay);
+            DayOfheight(onlyOneList,dayCount,getFirstDay); //6주나왔을때 높이설정 
 
             Day.appendChild(onlyOneList);
             continue; //다음 for문을 돌림 
@@ -185,7 +187,7 @@ function DayOfheight(list,dayCount,firstDay){
 
 function setMonthTitle(year,mon)
 {
-    month.innerHTML=`${year}. ${mon}`;
+    month.innerHTML=`${year}. ${getPadstart(mon)}`;
 }
 
 function nextMonthOrYear()
@@ -221,21 +223,15 @@ next.addEventListener('click',nextMonthOrYear);
 
 
 
-function main()
-{
-    makeCalendar(year,mon,getDayOfMon(mon,year));
-    setMonthTitle(year,mon);
-    today_title.innerHTML=`Today... ${year}.${mon}.${DayOfChoice} `;
-}
+
 
 //Day는 ul의 클래스 이름
 Day.addEventListener('click',(event)=>{
-    
     if(event.target.tagName==='UL')return; // UL이아닌 LI를 클릭하였을때 해야함.
     if(event.target.className!=='disabled') //일자들을 눌렀을 때 
     {
         clearEvent(); // 앞에 선택된것 빨간색 된거 해제 
-        today_title.textContent=`Today... ${year}.${mon}.${event.target.textContent} `;
+        today_title.textContent=`Today... ${year}.${ getPadstart(mon)}.${getPadstart(event.target.textContent)}`;
         event.target.style.border='3px solid red'; //해당 일자를 레드로 변경
         DayOfChoice =event.target.innerHTML;        // i
         MonOfChoice=mon;
@@ -255,9 +251,31 @@ function clearEvent()
         value.style.border='none';
     })
 }
+function main() //초기화면 메인 
+{
+    makeCalendar(year,mon,getDayOfMon(mon,year));
+    setMonthTitle(year,mon);
+    today_title.innerHTML=`Today... ${year}.${getPadstart(mon)}.${getPadstart(DayOfChoice)} `;
+}
+
+function getPadstart(DayOfmonChoice) 
+{
+    let DMchoice;
+    if(String(DayOfmonChoice).length===1)
+    {
+        DMchoice=String(DayOfmonChoice).padStart(2,"0");
+        console.log(DMchoice);
+        return DMchoice
+    }
+    else{
+        DMchoice=DayOfmonChoice
+        return DMchoice;
+    }
+}
+main();
+
+
 
  export {year,mon,DayOfChoice, Day};//내보내기
-
-main();
 
 

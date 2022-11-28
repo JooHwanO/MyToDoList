@@ -1,8 +1,3 @@
-
-
-
-
-
 const images=["COKE.gif"];
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 const bdgImage = document.getElementById("main-img");

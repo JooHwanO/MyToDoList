@@ -70,6 +70,8 @@ function PaintToDo(newTodo) {
     li.appendChild(hr);
     toDoList.appendChild(li);
     button.addEventListener("click", DeleteToDo);
+
+
     check.addEventListener("click",(event)=>{
         console.log(event);
         console.log(parent);
@@ -90,7 +92,6 @@ function PaintToDo(newTodo) {
             newTodo.tag=1;
             saveToDos();
         }
-        
     });
     
    }
@@ -114,7 +115,11 @@ function saveToDos() {
 
 function handleTodoSubmit(event) {
     event.preventDefault();
-
+    if(ToDolist.length > 12)
+    {
+        alert('최대 개수 입니다.');
+        return;
+    }
     if (toDoInput.value === '') {
         alert('값을 입력해주세요.');
         return;
@@ -152,7 +157,12 @@ add.addEventListener("click", ()=>
         alert('값을 입력해주세요.');
         return;
     }
-
+    console.log(localStorage.getItem(YMD),"zz");
+    if(ToDolist.length > 12)
+    {
+        alert('최대 개수 입니다.');
+        return;
+    }
     const newTodo = toDoInput.value;
     toDoInput.value = "";
 
@@ -170,12 +180,19 @@ add.addEventListener("click", ()=>
 
 reset.addEventListener("click", (event)=>{
     YMD = year + '-' + mon + '-' + DayOfChoice;
-    localStorage.removeItem(YMD);
+    if(window.confirm("해당 일자의 계획을 모두 삭제하시겠습니까?"))
+    {
+        localStorage.removeItem(YMD);
+    }
+    
     selectTodo().forEach(PaintToDo);
 });
 
 
 Allreset.addEventListener("click", (event)=>{
-    localStorage.clear();
+    if(window.confirm("달력의 모든 계획을 삭제하시겠습니까?"))
+    {
+        localStorage.clear();
+    }
     selectTodo().forEach(PaintToDo);
 });

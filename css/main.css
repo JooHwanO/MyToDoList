@@ -5,6 +5,7 @@ hr
     border:none;
     border-bottom: 3px dotted black;
 }
+
 #main-img 
 {
     position: absolute;
@@ -419,6 +420,8 @@ li{
 #todo-list> li > button{
     margin-left:6px;
     float:right;
+    border:0; /*버튼 바탕 없애기*/
+    outline: 0; /*버튼 바탕 없애기*/
 }
 
 #todo-list> li > hr{
