@@ -118,8 +118,8 @@ function makeCalendar(year,mon,dayCount){
 
         if(0===getDay(year,mon,i)){
             list.style.color = 'red';
-            
         }
+        
         else if(6==getDay(year,mon,i)){
             list.style.color = 'blue';
         }

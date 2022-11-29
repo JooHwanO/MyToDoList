@@ -1,7 +1,6 @@
 const Day = document.querySelector(".day");
 const month = document.querySelector('.month-name');
 const date = new Date() //현재날짜 받아오기
-/* */
 
 let currentYear = date.getFullYear(); //년도 받아오기
 let currentMon = date.getMonth()+1;   //0~11까지이므로 1더해야함.
@@ -273,8 +272,6 @@ function getPadstart(DayOfmonChoice)
     }
 }
 main();
-
-
 
  export {year,mon,DayOfChoice, Day};//내보내기
 

@@ -157,7 +157,7 @@ add.addEventListener("click", ()=>
         alert('값을 입력해주세요.');
         return;
     }
-    console.log(localStorage.getItem(YMD),"zz");
+    
     if(ToDolist.length > 12)
     {
         alert('최대 개수 입니다.');

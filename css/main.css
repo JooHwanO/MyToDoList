@@ -302,7 +302,13 @@ li{
     height: 55px;
     margin-right: 15px; /*width65 + m-right 15 = 80 위의 mon~sun도 80임*/
     margin-top: 10px;
+    transition: all 0.1s linear;
 }
+.main .day li:hover{
+    transform: scale(1.1);
+}
+
+
 /*최상단 제목 */
 .main .main-title{
     padding: 10px;
