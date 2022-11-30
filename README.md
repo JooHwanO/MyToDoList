@@ -37,8 +37,8 @@
 ### 3.3 import와 export
 * js 파일간에 변수와 객체등을 연결하기 위해 import와 export를 사용하였다.<br>
   하지만.. 로컬환경에서는 오류가 떴다
-* 해당 오류가 일어난 이유는 모듈은 로컬파일에서 동작하지 않고 HTTP, HTTPS 프로토콜을 통해서만 가능하다.
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb576788-7007-4e3c-b157-03e7060c1918/Untitled.png) <br>
+* 해당 오류가 일어난 이유는 모듈은 로컬파일에서 동작하지 않고 HTTP, HTTPS 프로토콜을 통해서만 가능하다.<br>
+![image](https://user-images.githubusercontent.com/110041859/204747665-3ac0a347-8e2b-46a0-8c66-9e7f8aa1e343.png)
  -> 따라서 이를 해결하기 위해 라이브 서버를 사용했다<br>
  
 ❤ 라이브 서버란?
