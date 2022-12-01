@@ -95,10 +95,13 @@ function makeCalendar(year,mon,dayCount)
             const onlyOneList = document.createElement('li');
             onlyOneList.textContent =`${i}`; // 현재날짜를 li에 넣음.
             
-            // 현재날짜 테두리 설정
+            // 선택된 날짜와 현재 날짜가 같으면 border 설정 
             if(currentYear==yearOfChoice&&currentMon===MonOfChoice&&currentDay===DayOfChoice)
             {   //Choice의 초기값은 currentYear로 위에 선언됨. 
                 onlyOneList.style.border='3px solid red';
+            }
+            else{ //일치하지 않을 때 블랙 테두리
+                onlyOneList.style.border='3px solid orange';
             }
 
             //현재 날짜가 토요일이나, 일요일일 경우 
@@ -125,7 +128,6 @@ function makeCalendar(year,mon,dayCount)
 
         const list =document.createElement("li");
         list.textContent=`${i}`;
-
         //나머지 일수들은 border를 적용하지 않도록 하기 위함.
         if(i===DayOfChoice&&year===yearOfChoice&&mon===MonOfChoice)
         {
@@ -151,14 +153,10 @@ function makeCalendar(year,mon,dayCount)
             list.style.marginRight ='0px';
         }
         DayOfheight(list,dayCount,getFirstDay);
-
-
-
         Day.appendChild(list);
-
     }
 }
-
+/*DayOfheight 함수 : 현재달에 표시된 일수가 35일이 넘으면 각 일자박스의 크기를 조절*/
 function DayOfheight(list,dayCount,firstDay){
 
     if((firstDay+7)%7+dayCount<=35)
@@ -170,13 +168,13 @@ function DayOfheight(list,dayCount,firstDay){
     }
 }
 
-
+/*setMonthTitle 함수 : 캘린더 위에 현재 년,월 표시 */
 function setMonthTitle(year,mon)
 {
     month.innerHTML=`${year}. ${getPadstart(mon)}`;
 }
 
-
+/* nextMonthOrYear 함수 : 오른쪽 화살표 클릭 했을때 */
 function nextMonthOrYear()
 {
     if(mon===12)
@@ -190,7 +188,7 @@ function nextMonthOrYear()
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
 }
-
+/* preMonthOrYear 함수 : 왼쪽 화살표 클릭 했을때 */
 function preMonthOrYear()
 {
     if(mon===1)
@@ -212,7 +210,7 @@ next.addEventListener('click',nextMonthOrYear);
 
 
 
-//Day는 ul의 클래스 이름
+//Day는 ul의 이름
 Day.addEventListener('click',(event)=>{
     if(event.target.tagName==='UL')return; // UL이아닌 LI를 클릭하였을때 해야함.
     if(event.target.className!=='disabled') //일자들을 눌렀을 때 
@@ -223,11 +221,8 @@ Day.addEventListener('click',(event)=>{
         DayOfChoice =event.target.innerHTML;        // i
         MonOfChoice=mon;
         yearOfChoice=year;
-    //    console.log(DayOfChoice);
-     //   console.log(event.target);
         clickEventArr.push(event.target);
         input.focus(); //커서깜빡이게 변경
-     //   console.log(clickEventArr);
     }
 
 });
@@ -262,6 +257,6 @@ function getPadstart(DayOfmonChoice)
 
 main();
 
- export {year,mon,DayOfChoice, Day};//내보내기
+ export {year,mon,DayOfChoice, Day}; //내보내기
 
 
