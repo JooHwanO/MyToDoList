@@ -1,5 +1,5 @@
 
-import { year, mon, DayOfChoice, Day } from "./cleander.js"
+import { year, mon, DayOfChoice, Day } from "./caleandar.js"
 
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input")
